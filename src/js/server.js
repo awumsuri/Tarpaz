@@ -78,7 +78,7 @@ router.route("/storetoken")
             }
 
             if (req.body.token === undefined) {
-                req.send("no token");
+                res.send("no token");
                 return;
             }
             var device = new Device();
