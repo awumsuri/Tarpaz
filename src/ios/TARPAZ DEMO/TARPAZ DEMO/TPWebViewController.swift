@@ -13,6 +13,9 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var refreshButton: UIImageView!
     
+    private let request = URLRequest(url: URL(string: TPConstants.DOMAIN+"/static/")!);    
+    private var isAnimating: Bool = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.  
@@ -34,13 +37,23 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func refreshHandler(_ gesture: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 1.0, delay: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations:{ () -> Void in
+            self.isAnimating = true;
+            self.view.autoresizesSubviews = false;
+            self.refreshButton.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+            
+        } , completion: {(_:Bool) -> Void in
+            print("completed rotation");
+            self.refreshButton.transform = CGAffineTransform(rotationAngle: CGFloat(0));
+        });
         
         loadPage();
     }
     
     func loadPage() {
-        let request = URLRequest(url: URL(string: TPConstants.DOMAIN+"/static/")!);
+        
         webView.scalesPageToFit = true;
+        webView.delegate = self;
         webView.loadRequest(request);
     }
     
@@ -49,7 +62,7 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        
+        isAnimating = false;
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {

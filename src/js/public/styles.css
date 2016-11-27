@@ -1,3 +1,38 @@
+@font-face{
+  font-family:"custom";
+  src:url("/fonts/futureFonts.ttf");
+}
+
+@font-face {
+  font-family: "headingfontNumber";
+  src:url("/fonts/_H_HelveticaNeueExtras.ttf");
+}
+
+@font-face{
+  font-family:"headingfont";
+  src:url("/fonts/bebas.ttf");
+}
+
+@font-face{
+  font-family:"coco";
+  src:url("/fonts/Coco-Regular.otf");
+}
+@font-face{
+  font-family: "customThin";
+  src:url("/fonts/Roboto-Thin.ttf");
+}
+
+@font-face{
+  font-family: "customLight";
+  src:url("/fonts/Roboto-Light.ttf");
+}
+@font-face{
+  font-family: "customRegular";
+  src:url("/fonts/Roboto-Regular.ttf");
+}
+
+
+
 .logo img{
   width: 400px;
   height: 377px;
@@ -12,4 +47,10 @@
 .space {
   width: 100%;
   height: 40px;
+}
+
+.main {
+  width: 100%;
+  min-width: 500px;
+  font-family: "headingfont";
 }
