@@ -27,16 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
         let session = URLSession.shared;
-       
-        let deviceNSData = NSData(data: deviceToken);
-           
-        print(deviceNSData);
-       
         let deviceString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
         let paramString = "token=<" + deviceString + ">";
         
         var req = URLRequest(url: URL(string: TPConstants.DOMAIN + "/api/storetoken")!);
+        
         req.httpMethod = "POST";
         req.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData;
         req.httpBody = paramString.data(using: String.Encoding.utf8);
