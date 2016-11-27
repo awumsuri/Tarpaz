@@ -25,12 +25,10 @@
          </span>
      </span>
      <div class="price-container">
-       <form class="form-horizontal">
+       <form class="form-horizontal" method="POST" action="/static/api/update">
           <fieldset>
-
           <!-- Form Name -->
           <legend>Add New Prices</legend>
-
           <!-- Text input-->
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">FIX:</label>
@@ -73,9 +71,10 @@
             <input id="textinput" name="plt" type="text" placeholder="47" class="form-control input-md">
             </div>
           </div>
+          <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">UPDATE</button>
           </fieldset>
         </form>
-        <button id="singlebutton" name="singlebutton" class="btn btn-primary">UPDATE</button>
+
      </div>
     </div>
   </body>

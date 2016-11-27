@@ -21,41 +21,10 @@ router.use(function(req, res, next) {
 app.get('/', function(req, res) {
     res.status('404').send('<h1>Forbidden</h1>');
 });
-
-router.route("/removetoken").post(function(req, res) {
-    Device.find({
-        "token": req.body.token
-    }, function(err, devices) {
-        if (err) {
-            throw err;
-            res.send("error: %s");
-        } else {
-            devices.forEach(function(device) {
-                device.remove();
-            });
-            res.send("success");
-        }
-    });
+router.route("/update").post(function(req, res) {
+    res.send("true");
 });
 
-router.route("/resettoken").post(function(req, res) {
-    Device.find({
-        "token": req.body.token
-    }, function(err, devices) {
-        if (err) {
-            console.log("err:" + err);
-            throw err;
-            res.send("error: %s", err);
-        } else {
-            devices.forEach(function(device) {
-                device.badges = 0;
-                device.save();
-                console.log("reseting token:" + device.token);
-            });
-            res.send("success");
-        }
-    });
-});
 router.route("/storetoken")
     .post(function(req, res) {
         if (req.body.token === "(null)") {
