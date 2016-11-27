@@ -15,7 +15,8 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.        
-        let request = URLRequest(url: URL(string: "http://google.com")!);
+        let request = URLRequest(url: URL(string: TPConstants.DOMAIN+"/static/")!);
+        webView.scalesPageToFit = true;
         webView.loadRequest(request);
         
     }

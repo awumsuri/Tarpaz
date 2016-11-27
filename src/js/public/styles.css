@@ -7,3 +7,8 @@
   margin: auto;
   text-align: center;
 }
+
+.space {
+  width: 100%;
+  height: 40px;
+}
