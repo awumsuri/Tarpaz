@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         var req = URLRequest(url: URL(string: TPConstants.DOMAIN + "/api/storetoken")!);
         
         req.httpMethod = "POST";
-        req.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData;
+        req.cachePolicy = URLRequest.CachePolicy.reloadIgnoringCacheData;
         req.httpBody = paramString.data(using: String.Encoding.utf8);
         
         let task = session.dataTask(with: req, completionHandler: {(data, response, error) -> Void in

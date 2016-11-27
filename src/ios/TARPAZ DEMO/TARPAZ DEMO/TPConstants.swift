@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
-public class TPConstants {
-    public static let DOMAIN:String = "http://ec2-52-23-248-182.compute-1.amazonaws.com:8007";
+open class TPConstants {
+    open static let DOMAIN:String = "http://ec2-52-23-248-182.compute-1.amazonaws.com:8007";
+    open static let SCREEN_WIDTH = UIScreen.main.bounds.size.width;
+    open static let SCREEN_HEIGHT = UIScreen.main.bounds.size.height;
 }

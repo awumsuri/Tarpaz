@@ -28,6 +28,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tarpaz-logo.jpg" width="548" height="274"/>
+        <image name="tarpaz-logo.jpg" width="676" height="630"/>
     </resources>
 </document>
