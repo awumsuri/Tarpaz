@@ -32,8 +32,8 @@
 }
 
 .logo img{
-  width: 300px;
-  height: 277px;
+  width: 250px;
+  height: 233px;
 }
 
 .logo {
@@ -54,4 +54,8 @@
   font-size: 30px;
   text-align: center;
   margin: auto;
+}
+
+#time {
+  color: red;
 }

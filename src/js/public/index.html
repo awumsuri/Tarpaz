@@ -14,7 +14,13 @@
       <img src="tarpaz-logo.jpg"/>
     </div>
     <div class="main">
-        <span class="title">Gold Prices as of <script> new Date().getTime() </script> </span>
+        <span class="title">Gold Prices as of
+          <span id="time">
+            <script>var t = new Date();
+              $("#time").html(t);
+           </script>
+         </span>
+     </span>
     </div>
   </body>
 </html>
