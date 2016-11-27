@@ -2,7 +2,7 @@
 
 var apn     = require("./node-apn");
 var mongoose    = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/FXTimeKeeperAPN');
+mongoose.connect('mongodb://localhost:27017/TARPAZ');
 var Device      = require("./../models/device");
 
 Device.find({}, function (err, devices) {
@@ -14,6 +14,6 @@ Device.find({}, function (err, devices) {
     devices.forEach(function (device) {
         if(device.token && device.token !== "(null)"){
             apn.send(device.token, "Push Services back online. Thanks for your patience.", device.badges, null);
-        }        
+        }
     });
 });
