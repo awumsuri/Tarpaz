@@ -2,15 +2,15 @@
 
 var apn     = require('apn');
 var options = {
-    cert:"/home/ubuntu/FXTimeKeeper/apn_app/config/Certificates.pem",
-    key:"/home/ubuntu/FXTimeKeeper/apn_app/config/key.pem",
+    cert:"../config/Certificates.pem",
+    key:"../config/key.pem",
     passphrase:"aFREE))@",
     "batchFeedback":true,
     "interval":300
 };
 
 var apnConnection   = new apn.Connection(options);
-apnConnection.options.production = true;
+apnConnection.options.production = false;
 
 apnConnection.on("connected", function(){
     console.info("Connected");
