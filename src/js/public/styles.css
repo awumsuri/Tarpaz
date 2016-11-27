@@ -32,8 +32,8 @@
 }
 
 .logo img{
-  width: 400px;
-  height: 377px;
+  width: 300px;
+  height: 277px;
 }
 
 .logo {
@@ -51,7 +51,7 @@
   width: 100%;
   min-width: 500px;
   font-family: "headingfont";
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   margin: auto;
 }
