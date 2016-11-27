@@ -72,6 +72,8 @@ router.route("/storetoken")
                 return;
             }
 
+			console.log("token:"+req.body.token);
+
             if (docs && docs.length > 0) {
                 res.send("success");
                 return;
