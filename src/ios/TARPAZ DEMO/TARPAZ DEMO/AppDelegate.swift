@@ -9,7 +9,6 @@
 import UIKit
 import UserNotifications
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
@@ -37,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let deviceString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
         let paramString = "token=<" + deviceString + ">";
         
-        var req = URLRequest(url: URL(string: "http://ec2-52-23-248-182.compute-1.amazonaws.com:8007/api/storetoken")!);
+        var req = URLRequest(url: URL(string: TPConstants.DOMAIN + "/api/storetoken")!);
         req.httpMethod = "POST";
         req.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData;
         req.httpBody = paramString.data(using: String.Encoding.utf8);

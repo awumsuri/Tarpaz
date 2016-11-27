@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4906AD1DEAF6AD00D56B48 /* TPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4906AC1DEAF6AD00D56B48 /* TPConstants.swift */; };
+		3A4906AF1DEAF8E700D56B48 /* tarpaz-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A4906AE1DEAF8E700D56B48 /* tarpaz-logo.jpg */; };
 		3A8CF35F1DE8E0B900CB9804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CF35E1DE8E0B900CB9804 /* AppDelegate.swift */; };
 		3A8CF3611DE8E0B900CB9804 /* TPWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CF3601DE8E0B900CB9804 /* TPWebViewController.swift */; };
 		3A8CF3641DE8E0B900CB9804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8CF3621DE8E0B900CB9804 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A4906AC1DEAF6AD00D56B48 /* TPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPConstants.swift; sourceTree = "<group>"; };
+		3A4906AE1DEAF8E700D56B48 /* tarpaz-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tarpaz-logo.jpg"; sourceTree = "<group>"; };
 		3A8C8C6E1DE9AB9D001F9231 /* TARPAZ DEMO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TARPAZ DEMO.entitlements"; sourceTree = "<group>"; };
 		3A8CF35B1DE8E0B900CB9804 /* TARPAZ DEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TARPAZ DEMO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8CF35E1DE8E0B900CB9804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A4906AB1DEAF68F00D56B48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A4906AC1DEAF6AD00D56B48 /* TPConstants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		3A8CF3521DE8E0B900CB9804 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,8 @@
 		3A8CF35D1DE8E0B900CB9804 /* TARPAZ DEMO */ = {
 			isa = PBXGroup;
 			children = (
+				3A4906AE1DEAF8E700D56B48 /* tarpaz-logo.jpg */,
+				3A4906AB1DEAF68F00D56B48 /* Model */,
 				3A8C8C6E1DE9AB9D001F9231 /* TARPAZ DEMO.entitlements */,
 				3A8CF35E1DE8E0B900CB9804 /* AppDelegate.swift */,
 				3A8CF3601DE8E0B900CB9804 /* TPWebViewController.swift */,
@@ -242,6 +256,7 @@
 			files = (
 				3A8CF3691DE8E0B900CB9804 /* LaunchScreen.storyboard in Resources */,
 				3A8CF3661DE8E0B900CB9804 /* Assets.xcassets in Resources */,
+				3A4906AF1DEAF8E700D56B48 /* tarpaz-logo.jpg in Resources */,
 				3A8CF3641DE8E0B900CB9804 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4906AD1DEAF6AD00D56B48 /* TPConstants.swift in Sources */,
 				3A8CF3611DE8E0B900CB9804 /* TPWebViewController.swift in Sources */,
 				3A8CF35F1DE8E0B900CB9804 /* AppDelegate.swift in Sources */,
 			);
