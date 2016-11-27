@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 8007;
 var router = express.Router();
 router.use(function(req, res, next) {
     next();
@@ -95,7 +95,7 @@ router.route("/storetoken")
 
 app.use("/api", router);
 app.use("/static", express.static("public"));
-app.listen(port, '127.0.0.1', function(err) {
+app.listen(port, '172.31.60.240', function(err) {
     if (err) throw err;
     console.log("Conected to port:" + port);
 });
