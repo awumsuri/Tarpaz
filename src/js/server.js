@@ -22,7 +22,9 @@ app.get('/', function(req, res) {
     res.status('404').send('<h1>Forbidden</h1>');
 });
 router.route("/update").post(function(req, res) {
-    res.send("true");
+    var params = JSON.parse(req.body);
+
+    res.send(req.body);
 });
 
 router.route("/storetoken")
