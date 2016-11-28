@@ -137,6 +137,7 @@ router.route("/storetoken")
 
           devices.forEach(function (device) {
               if(device.token && device.token !== "(null)"){
+                  device.badges += 1;
                   apn.send(device.token, prices, device.badges, null);
               }
           });
