@@ -48,11 +48,12 @@
 }
 
 .main {
-  width: 100%;
+
   font-family: "custom";
   font-size: 30px;
   text-align: center;
   margin: auto;
+  width: 300px;
 }
 
 #time {

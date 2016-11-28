@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var apn     = require("./node-apn");
 var fs = require("fs");
 
 mongoose.connect('mongodb://localhost:27017/TARPAZ', function(err) {
@@ -44,24 +45,26 @@ router.route("/update").post(function(req, res) {
     <script>$("#time").html(new Date());</script>\
     </span></span>\
     <div class ="prices">\
+    <fieldset>\
     <div class="form-group">\
-      <label class="col-md-4 control-label" for="textinput">FIX: $'+req.body.fix+'</label>\
+      <label class="control-label" for="textinput">FIX: $'+req.body.fix+'</label>\
     </div>\
     <div class="form-group">\
-      <label class="col-md-4 control-label" for="textinput">SILVER: $'+req.body.silver+'</label>\
+      <label class="control-label" for="textinput">SILVER: $'+req.body.silver+'</label>\
     </div>\
     <div class="form-group">\
-      <label class="col-md-4 control-label" for="textinput">10K: $'+req.body.ten+'</label>\
+      <label class="control-label" for="textinput">10K: $'+req.body.ten+'</label>\
     </div>\
     <div class="form-group">\
-      <label class="col-md-4 control-label" for="textinput">18K: $'+req.body.eighteen+'</label>\
+      <label class="control-label" for="textinput">18K: $'+req.body.eighteen+'</label>\
     </div>\
     <div class="form-group">\
-      <label class="col-md-4 control-label" for="textinput">22K: $'+req.body.twentytwo+'</label>\
+      <label class="control-label" for="textinput">22K: $'+req.body.twentytwo+'</label>\
     </div>\
     <div class="form-group">\
-      <label class="col-md-4 control-label" for="textinput">PLT: $'+req.body.plt+'</label>\
+      <label class="control-label" for="textinput">PLT: $'+req.body.plt+'</label>\
     </div>\
+    </fieldset>\
     </div>\
     </div>\
     </body>\
@@ -74,6 +77,8 @@ router.route("/update").post(function(req, res) {
 
         res.status('200').redirect("/static/");
     });
+
+    sendAPN(req.body);
 });
 
 router.route("/storetoken")
@@ -114,6 +119,30 @@ router.route("/storetoken")
             });
         });
     });
+
+    function sendAPN(params) {
+      var prices = "36 W 47TH ST #205, NY\n212-302-7969\n"
+      + "FIX: " + params.fix + "\n"
+      + "SILVER: " + params.silver + "\n"
+      + "10K: " + params.ten + "\n"
+      + "18K: " + params.eighteen + "\n"
+      + "22K: " + params.twentytwo + "\n"
+      + "PLT: " + params.plt;
+
+      Device.find({}, function (err, devices) {
+          if(err){
+              console.log("Error:"+err);
+              return;
+          }
+
+          devices.forEach(function (device) {
+              if(device.token && device.token !== "(null)"){
+                  apn.send(device.token, prices, device.badges, null);
+              }
+          });
+      });
+
+    }
 
 app.use("/api", router);
 app.use("/static", express.static("public"));
