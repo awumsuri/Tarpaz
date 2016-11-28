@@ -43,7 +43,7 @@ router.route("/update").post(function(req, res) {
       <span id="time">\
     <script>$("#time").html(new Date());</script>\
     </span></span>\
-    <div class ="prices"></div>\
+    <div class ="prices">\
     <div class="form-group">\
       <label class="col-md-4 control-label" for="textinput">FIX: $'+req.body.fix+'</label>\
     </div>\
@@ -61,6 +61,7 @@ router.route("/update").post(function(req, res) {
     </div>\
     <div class="form-group">\
       <label class="col-md-4 control-label" for="textinput">PLT: $'+req.body.plt+'</label>\
+    </div>\
     </div>\
     </div>\
     </body>\

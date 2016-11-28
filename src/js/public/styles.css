@@ -32,8 +32,8 @@
 }
 
 .logo img{
-  width: 250px;
-  height: 233px;
+  width: 200px;
+  height: 177px;
 }
 
 .logo {
@@ -58,4 +58,9 @@
 
 #time {
   color: red;
+}
+
+.prices {
+  font-family: customThin;
+  font-size: 35px;
 }
