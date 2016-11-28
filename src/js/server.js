@@ -22,38 +22,24 @@ app.get('/', function(req, res) {
     res.status('404').send('<h1>Forbidden</h1>');
 });
 router.route("/update").post(function(req, res) {
-    var params = JSON.parse(req.body);
-    var html = '<html>\
-      <head>\
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>\
 
-        <script\
-          src="https://code.jquery.com/jquery-3.1.1.min.js"\
-          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="\
-          crossorigin="anonymous"\
-        >\
-        </script>\
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>\
-      </head>\
-      <body>\
-        <span class="space"></span>\
-        <div class="logo">\
-          <img src="tarpaz-logo.jpg"/>\
-        </div>\
-        <div class="main">\
-            <span class="title">GOLD PRICE AS OF\
-              <BR/>\
-              <span id="time">\
-                <script>\
-                  $("#time").html(new Date());\
-               </script>\
-             </span>\
-         </span>\
-        </div>\
-        </body>\
-        </html>'
+    var html = '<html><head><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"\
+     rel="stylesheet"/><script src="https://code.jquery.com/jquery-3.1.1.min.js"\
+     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="\
+    crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>\
+    <body>\
+    <span class="space"></span>\
+      <div class="logo">\
+        <img src="tarpaz-logo.jpg"/>\
+      </div> <div class="main">\
+      <span class="title">GOLD PRICE AS OF<BR/>\
+      <span id="time">\
+    <script>$("#time").html(new Date());</script></span></span>\
+    </div>\
+    </body>\
+    </html>'
 
-    res.status('200').send(html);
+    res.status('200').redirect("/static/");
 });
 
 router.route("/storetoken")
@@ -97,7 +83,8 @@ router.route("/storetoken")
 
 app.use("/api", router);
 app.use("/static", express.static("public"));
-app.listen(port, '172.31.60.240', function(err) {
+//app.listen(port, '172.31.60.240', function(err) {
+  app.listen(port, '127.0.0.1', function(err) {
     if (err) throw err;
     console.log("Conected to port:" + port);
 });
