@@ -28,9 +28,11 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func positionRefershButton() {
+        
         refreshButton.frame = CGRect(x: (TPConstants.SCREEN_WIDTH - refreshButton.frame.size.width) / 2,
                        y: TPConstants.SCREEN_HEIGHT - refreshButton.frame.size.height - 3,
                        width: refreshButton.frame.size.width, height: refreshButton.frame.size.height);
+        
         let tap = UITapGestureRecognizer(target: self, action:#selector(self.refreshHandler(_:)));
         refreshButton.addGestureRecognizer(tap);
         refreshButton.isUserInteractionEnabled = true;        
@@ -50,15 +52,14 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
         loadPage();
     }
     
-    func loadPage() {
-        
+    func loadPage() {        
         webView.scalesPageToFit = true;
         webView.delegate = self;
         webView.loadRequest(REQUEST);
     }
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        return true;
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

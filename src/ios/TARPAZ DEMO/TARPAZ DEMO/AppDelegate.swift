@@ -19,11 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         let center = UNUserNotificationCenter.current();
         center.requestAuthorization(options: [.badge, .alert, .sound], completionHandler:{(granted, error) -> Void in
-            
+            application.registerForRemoteNotifications();
         });
-        application.registerForRemoteNotifications();
+        resetBadges();
         
         return true
+    }
+    
+    func resetBadges() {
+        UIApplication.shared.applicationIconBadgeNumber = 0;
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -55,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         });
         
         task.resume();
-        
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
