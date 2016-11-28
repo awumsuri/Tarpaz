@@ -49,7 +49,6 @@
 
 .main {
   width: 100%;
-  min-width: 500px;
   font-family: "custom";
   font-size: 30px;
   text-align: center;
@@ -61,6 +60,6 @@
 }
 
 .prices {
-  font-family: customThin;
+  font-family: customRegular;
   font-size: 35px;
 }
