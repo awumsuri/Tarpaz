@@ -31,6 +31,7 @@ MongoClient.connect('mongodb://localhost:27017/TARPAZ', function(err, db) {
             });
 
             console.info("rss_feed created");
+            db.close();
         });
     }
 });
