@@ -13,7 +13,7 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var refreshButton: UIImageView!
     
-    private let request = URLRequest(url: URL(string: TPConstants.DOMAIN+"/static/")!);    
+    private let REQUEST = URLRequest(url: URL(string: TPConstants.DOMAIN+"/static/")!);    
     private var isAnimating: Bool = false;
     
     override func viewDidLoad() {
@@ -54,7 +54,7 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
         
         webView.scalesPageToFit = true;
         webView.delegate = self;
-        webView.loadRequest(request);
+        webView.loadRequest(REQUEST);
     }
     
     override var prefersStatusBarHidden: Bool {
