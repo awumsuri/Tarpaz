@@ -122,12 +122,12 @@ router.route("/storetoken")
 
     function sendAPN(params) {
       var prices = "36 W 47TH ST #205, NY\n212-302-7969\n"
-      + "FIX: " + params.fix + "\n"
-      + "SILVER: " + params.silver + "\n"
-      + "10K: " + params.ten + "\n"
-      + "18K: " + params.eighteen + "\n"
-      + "22K: " + params.twentytwo + "\n"
-      + "PLT: " + params.plt;
+      + "FIX: $" + params.fix + "\n"
+      + "SILVER: $" + params.silver + "\n"
+      + "10K: $" + params.ten + "\n"
+      + "18K: $" + params.eighteen + "\n"
+      + "22K: $" + params.twentytwo + "\n"
+      + "PLT: $" + params.plt;
 
       Device.find({}, function (err, devices) {
           if(err){
