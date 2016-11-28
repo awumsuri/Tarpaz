@@ -14,6 +14,7 @@ var Device = require("./models/device");
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
 app.use(bodyParser.json());
 var port = process.env.PORT || 8007;
 var router = express.Router();
@@ -54,6 +55,9 @@ router.route("/update").post(function(req, res) {
                         </div>\
                         <div class="form-group">\
                           <label class="control-label" for="textinput">10K: $' + req.body.ten + '</label>\
+                        </div>\
+                        <div class="form-group">\
+                          <label class="control-label" for="textinput">14K: $' + req.body.fourteen + '</label>\
                         </div>\
                         <div class="form-group">\
                           <label class="control-label" for="textinput">18K: $' + req.body.eighteen + '</label>\
@@ -137,6 +141,7 @@ function sendAPN(params) {
         "FIX: $" + params.fix + "\n" +
         "SILVER: $" + params.silver + "\n" +
         "10K: $" + params.ten + "\n" +
+        "14K: $" + params.fourteen + "\n" +
         "18K: $" + params.eighteen + "\n" +
         "22K: $" + params.twentytwo + "\n" +
         "PLT: $" + params.plt;
