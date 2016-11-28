@@ -26,49 +26,49 @@ app.get('/', function(req, res) {
 router.route("/update").post(function(req, res) {
 
     var html = '<html>\
-    <head>\
-    <link href="styles.css" rel="stylesheet"/>\
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>\
-     <script src="https://code.jquery.com/jquery-3.1.1.min.js"\
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="\
-        crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">\
-    </script>\
-    </head>\
-    <body>\
-    <span class="space"></span>\
-      <div class="logo">\
-        <img src="tarpaz-logo.jpg"/>\
-      </div>\
-      <div class="main">\
-      <span class="title">GOLD PRICE AS OF<BR/>\
-      <span id="time">\
-    <script>$("#time").html(new Date());</script>\
-    </span></span>\
-    <div class ="prices">\
-    <fieldset>\
-    <div class="form-group">\
-      <label class="control-label" for="textinput">FIX: $'+req.body.fix+'</label>\
-    </div>\
-    <div class="form-group">\
-      <label class="control-label" for="textinput">SILVER: $'+req.body.silver+'</label>\
-    </div>\
-    <div class="form-group">\
-      <label class="control-label" for="textinput">10K: $'+req.body.ten+'</label>\
-    </div>\
-    <div class="form-group">\
-      <label class="control-label" for="textinput">18K: $'+req.body.eighteen+'</label>\
-    </div>\
-    <div class="form-group">\
-      <label class="control-label" for="textinput">22K: $'+req.body.twentytwo+'</label>\
-    </div>\
-    <div class="form-group">\
-      <label class="control-label" for="textinput">PLT: $'+req.body.plt+'</label>\
-    </div>\
-    </fieldset>\
-    </div>\
-    </div>\
-    </body>\
-    </html>';
+                  <head>\
+                  <link href="styles.css" rel="stylesheet"/>\
+                  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>\
+                   <script src="https://code.jquery.com/jquery-3.1.1.min.js"\
+                      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="\
+                      crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">\
+                  </script>\
+                  </head>\
+                  <body>\
+                  <span class="space"></span>\
+                    <div class="logo">\
+                      <img src="tarpaz-logo.jpg"/>\
+                    </div>\
+                    <div class="main">\
+                    <span class="title">GOLD PRICE AS OF<BR/>\
+                    <span id="time">\
+                  <script>$("#time").html(new Date());</script>\
+                  </span></span>\
+                  <div class ="prices">\
+                  <fieldset>\
+                  <div class="form-group">\
+                    <label class="control-label" for="textinput">FIX: $'+req.body.fix+'</label>\
+                  </div>\
+                  <div class="form-group">\
+                    <label class="control-label" for="textinput">SILVER: $'+req.body.silver+'</label>\
+                  </div>\
+                  <div class="form-group">\
+                    <label class="control-label" for="textinput">10K: $'+req.body.ten+'</label>\
+                  </div>\
+                  <div class="form-group">\
+                    <label class="control-label" for="textinput">18K: $'+req.body.eighteen+'</label>\
+                  </div>\
+                  <div class="form-group">\
+                    <label class="control-label" for="textinput">22K: $'+req.body.twentytwo+'</label>\
+                  </div>\
+                  <div class="form-group">\
+                    <label class="control-label" for="textinput">PLT: $'+req.body.plt+'</label>\
+                  </div>\
+                  </fieldset>\
+                  </div>\
+                  </div>\
+                  </body>\
+            </html>';
 
     fs.writeFile("public/index.html", html, function(err) {
         if (err)
