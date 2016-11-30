@@ -28,7 +28,7 @@ router.route("/update").post(function(req, res) {
 
     var html = '<html>\
                   <head>\
-                  <link href="http://52.23.248.182:8007/static/styles.css" rel="stylesheet"/>\
+                  <link href="http://104.236.85.29/:8007/static/styles.css" rel="stylesheet"/>\
                   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>\
                    <script src="https://code.jquery.com/jquery-3.1.1.min.js"\
                       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="\

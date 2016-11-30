@@ -27,6 +27,10 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
         loadPage();
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.applicationIconBadgeNumber = 0;
+    }
+    
     func positionRefershButton() {
         
         refreshButton.frame = CGRect(x: (TPConstants.SCREEN_WIDTH - refreshButton.frame.size.width) / 2,
@@ -56,6 +60,7 @@ class TPWebViewController: UIViewController, UIWebViewDelegate {
         webView.scalesPageToFit = true;
         webView.delegate = self;
         webView.loadRequest(REQUEST);
+        UIApplication.shared.applicationIconBadgeNumber = 0;
     }
     
     override var prefersStatusBarHidden: Bool {
