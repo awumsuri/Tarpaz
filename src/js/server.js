@@ -162,6 +162,10 @@ function sendAPN(params) {
     });
 }
 
+app.all('*', function(req, res) {
+    res.status('404').send('<h1>Forbidden</h1>');
+});
+
 app.use("/api", router);
 app.use("/static", express.static("public"));
 //app.listen(port, '172.31.60.240', function(err) {
